@@ -1,0 +1,9 @@
+aws ec2 run-instances \
+--image-id "ami-053b0d53c279acc90" \
+--count 1 \
+--instance-type t2.micro \
+--key-name "Ansible" \
+--security-group-ids "sg-00a15923a6a393d34" \
+--subnet-id "subnet-07828284c9567f5f7" \
+--iam-instance-profile Name=iam_ssm \
+--tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=CI-Jenkins},{Key=Environment,Value=dev}]'
